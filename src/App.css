@@ -61,6 +61,7 @@ li a, .dropbtn {
   background-color: #fff3f3;
   min-width: 120px;
   z-index: 1;
+  color: #ab5c72;
 }
 .dropdown-content1{
   display: none;

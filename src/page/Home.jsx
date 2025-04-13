@@ -99,10 +99,10 @@ function Home() {
                 <strong>Chuyên mục Skincare</strong>
               </Link>
               <div className="dropdown-content">
-                <Link to="/bai-viet-1-nhan-biet-cac-loai-da">
+                <Link to="/page1">
                   Nhận biết các loại da
                 </Link>
-                <Link to="/bai-viet-2-skincare-cho-da-mun">
+                <Link to="/page2">
                   Skincare cho da mụn
                 </Link>
                 <Link to="/bai-viet-3-skincare-cho-da-dau">
