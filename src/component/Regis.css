@@ -1,0 +1,95 @@
+/* Container của ảnh và form */
+.form-container {
+    display: flex;
+    justify-content: space-between; /* Đảm bảo ảnh và form nằm trên một hàng */
+    align-items: flex-start; /* Căn chỉnh form và ảnh lên trên */
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Định dạng cho ảnh */
+  #idd {
+    flex: 1; /* Chiếm 1 phần không gian */
+    padding: 20px;
+  }
+  
+  #idd img {
+    width: 100%;
+    max-width: 500px; /* Giới hạn chiều rộng ảnh */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Định dạng cho form */
+  #dang-ki {
+    flex: 1; /* Chiếm phần còn lại */
+    padding: 20px;
+    margin-left: 30px;
+  }
+  
+  /* Các thẻ trong form */
+  h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    margin-top: 5px;
+    transition: all 0.3s;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #edb1b3;
+    background-color: #fff;
+  }
+  
+  /* Style cho button submit */
+  .form-submit {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #edb1b3;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form-submit:hover {
+    background-color: #d99b99;
+  }
+  
+  .form-submit:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Style cho radio buttons */
+  .form-group label input[type="radio"] {
+    margin-right: 10px;
+  }
+  

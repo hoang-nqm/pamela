@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import Typed from "typed.js";
 import { Link, useNavigate } from "react-router-dom";
 import DropdownMenu from "../component/DropdownMenu";
+import Rating from "../component/Rating";
+import RegistrationForm from "../component/RegistrationForm";
 
 // Define styles for the component
 const styles = {
@@ -29,7 +31,8 @@ const styles = {
     fontFamily: "NotoSerifDisplay-Condensed",
     fontSize: "20px",
     color: "#502d25",
-    textAlign: "justify",
+    textAlign: "justify", 
+    padding: "0px 200px"
   },
   introContent: {
     display: "flex",
@@ -218,7 +221,7 @@ function Home() {
               làm đẹp mỗi ngày!
             </p>
           </div>
-          <div id="content">
+          <div style={{paddingRight:300}} id="content">
             <img
               src="Picture/hình 1.jpg"
               alt="Beauty"
@@ -227,7 +230,8 @@ function Home() {
           </div>
         </div>
       </main>
-
+      <RegistrationForm/>
+      {username && <Rating username={username} />}
       <footer>
         <img
           style={{ width: "100%" }}
