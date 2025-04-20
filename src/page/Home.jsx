@@ -31,8 +31,8 @@ const styles = {
     fontFamily: "NotoSerifDisplay-Condensed",
     fontSize: "20px",
     color: "#502d25",
-    textAlign: "justify", 
-    padding: "0px 200px"
+    textAlign: "justify",
+    padding: "0px 200px",
   },
   introContent: {
     display: "flex",
@@ -68,10 +68,10 @@ function Home() {
     }
   }, []);
 
-  const Logout =  () => {
-    localStorage.removeItem('username'); // Remove the username from localStorage
-    setUsername(''); // Clear the state
-    navigate('/'); // Redirect to the login page
+  const Logout = () => {
+    localStorage.removeItem("username"); // Remove the username from localStorage
+    setUsername(""); // Clear the state
+    navigate("/"); // Redirect to the login page
   };
   return (
     <div className="home">
@@ -102,12 +102,8 @@ function Home() {
                 <strong>Chuyên mục Skincare</strong>
               </Link>
               <div className="dropdown-content">
-                <Link to="/page1">
-                  Nhận biết các loại da
-                </Link>
-                <Link to="/page2">
-                  Skincare cho da mụn
-                </Link>
+                <Link to="/skincare1">Nhận biết các loại da</Link>
+                <Link to="/skincare2">Skincare cho da mụn</Link>
                 <Link to="/bai-viet-3-skincare-cho-da-dau">
                   Skincare cho da dầu
                 </Link>
@@ -221,7 +217,7 @@ function Home() {
               làm đẹp mỗi ngày!
             </p>
           </div>
-          <div style={{paddingRight:300}} id="content">
+          <div style={{ paddingRight: 300 }} id="content">
             <img
               src="Picture/hình 1.jpg"
               alt="Beauty"
@@ -230,7 +226,7 @@ function Home() {
           </div>
         </div>
       </main>
-      <RegistrationForm/>
+      <RegistrationForm />
       {username && <Rating username={username} />}
       <footer>
         <img

@@ -5,20 +5,21 @@ import "./App.css";
 import Home from "./page/Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./page/Login";
-import Page1 from "./page/Page1";
-import Page2 from "./page/page2";
+import Skincare1 from "./page/Skincare";
+
+import Skincare2 from "./page/Skincare2";
+import Skincare3 from "./page/Skincare3";
 
 function App() {
   return (
     <Router>
-  
       {/* Wrap the whole app with <Router> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/page1" element={<Page1 />} />
-        <Route path="/page2" element={<Page2 />} />
-
+        <Route path="/skincare1" element={<Skincare1 />} />
+        <Route path="/skincare2" element={<Skincare2 />} />
+        <Route path="/skincare3" element={<Skincare3 />} />
       </Routes>
     </Router>
   );

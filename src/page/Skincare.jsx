@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Page1 = () => {
+const Skincare1 = () => {
   const styles = {
     header: {
       width: "100%",
@@ -60,6 +60,9 @@ const Page1 = () => {
     <div style={{ backgroundColor: "#fde2e2" }}>
       <style>
         {`
+        html {
+      scroll-behavior: smooth;
+    }
           #banner { width: 100%; }
           .cursor {
             position: fixed;
@@ -133,12 +136,8 @@ const Page1 = () => {
               <strong>Chuyên mục Skincare</strong>
             </Link>
             <div className="dropdown-content">
-              <Link to="/page1">
-                Nhận biết các loại da
-              </Link>
-              <Link to="/page2">
-                Skincare cho da mụn
-              </Link>
+              <Link to="/page1">Nhận biết các loại da</Link>
+              <Link to="/page2">Skincare cho da mụn</Link>
               <Link to="/bai-viet-3-skincare-cho-da-dau">
                 Skincare cho da dầu
               </Link>
@@ -151,7 +150,7 @@ const Page1 = () => {
             </div>
           </li>
 
-          <li style={{marginTop:10}} className="dropdown">
+          <li style={{ marginTop: 10 }} className="dropdown">
             <Link to="/chuyen-muc-makeup" style={styles.linkText}>
               <strong>Chuyên mục Makeup</strong>
             </Link>
@@ -165,7 +164,7 @@ const Page1 = () => {
             </div>
           </li>
 
-          <li style={{marginTop:10}}  className="dropdown">
+          <li style={{ marginTop: 10 }} className="dropdown">
             <Link to="/san-pham" style={styles.linkText}>
               <strong>Sản phẩm</strong>
             </Link>
@@ -189,7 +188,7 @@ const Page1 = () => {
               </div>
             </div>
           </li>
-          <li style={{marginTop:10}} className="dropdown">
+          <li style={{ marginTop: 10 }} className="dropdown">
             <div className="dropdown-content11">
               {username ? (
                 <div>
@@ -217,32 +216,73 @@ const Page1 = () => {
                 listStyleType: "none",
                 border: "1px solid #502d25",
                 backgroundColor: "#ffffff",
-                opacity: 0.7,
-                paddingLeft: 20,
+                opacity: 0.9,
+                padding: "20px",
                 position: "sticky",
                 top: 100,
+                fontFamily: "Noto Serif, serif",
+                fontSize: "18px",
+                color: "#502d25",
+                borderRadius: "8px",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
               }}
             >
-              <p style={{ fontSize: 25 }}>
-                <strong>Mục lục</strong>
-              </p>
-              <li>
-                <Link to="">Phân vùng và cách nhận biết</Link>
+              <li
+                style={{
+                  fontSize: "22px",
+                  fontWeight: "bold",
+                  marginBottom: "10px",
+                }}
+              >
+                📚 Mục lục
               </li>
-              <li>
-                <a href="#da-thuong">Da thường</a>
+              <li style={{ margin: "8px 0" }}>
+                <a
+                  href="#phan-vung"
+                  style={{ textDecoration: "none", color: "#502d25" }}
+                >
+                  Phân vùng và cách nhận biết
+                </a>
               </li>
-              <li>
-                <a href="#da-dau">Da dầu</a>
+              <li style={{ margin: "8px 0" }}>
+                <a
+                  href="#da-thuong"
+                  style={{ textDecoration: "none", color: "#502d25" }}
+                >
+                  Da thường
+                </a>
               </li>
-              <li>
-                <a href="#da-kho">Da khô</a>
+              <li style={{ margin: "8px 0" }}>
+                <a
+                  href="#da-dau"
+                  style={{ textDecoration: "none", color: "#502d25" }}
+                >
+                  Da dầu
+                </a>
               </li>
-              <li>
-                <a href="#da-hon-hop">Da hỗn hợp</a>
+              <li style={{ margin: "8px 0" }}>
+                <a
+                  href="#da-kho"
+                  style={{ textDecoration: "none", color: "#502d25" }}
+                >
+                  Da khô
+                </a>
               </li>
-              <li>
-                <a href="#da-nhay-cam">Da nhạy cảm</a>
+              <li style={{ margin: "8px 0" }}>
+                <a
+                  href="#da-hon-hop"
+                  style={{ textDecoration: "none", color: "#502d25" }}
+                >
+                  Da hỗn hợp
+                </a>
+              </li>
+              <li style={{ margin: "8px 0" }}>
+                <a
+                  href="#da-nhay-cam"
+                  style={{ textDecoration: "none", color: "#502d25" }}
+                >
+                  Da nhạy cảm
+                </a>
               </li>
             </ul>
           </aside>
@@ -303,7 +343,71 @@ const Page1 = () => {
                 <br />T khô – U khô: da khô.
               </p>
             </div>
-            {/* Add other sections (da-thuong, da-dau, ...) here in similar fashion */}
+            <div>
+              <div id="da-thuong">
+                <h2></h2>
+                <h4>Nhận biết da thường</h4>
+                <img
+                  style={{ width: "100%" }}
+                  src="https://i.pinimg.com/474x/4c/2e/9e/4c2e9e9e47c10eeb3a0aa4f1450dabd3.jpg"
+                  alt="Da thường"
+                />
+              </div>
+
+              <div id="da-dau">
+                <h2></h2>
+                <h4>Nhận biết da dầu</h4>
+                <img
+                  style={{ width: "100%" }}
+                  src="https://i.pinimg.com/474x/26/ad/21/26ad215abd7bfdb5b9d91a0b33b1d6ec.jpg"
+                  alt="Da dầu"
+                />
+              </div>
+
+              <div id="da-kho">
+                <h2></h2>
+                <h4>Nhận biết da khô</h4>
+                <img
+                  style={{ width: "100%" }}
+                  src="https://i.pinimg.com/474x/f7/5a/3b/f75a3b4ccf8d4409017b30c5fe71fd1b.jpg"
+                  alt="Da khô"
+                />
+              </div>
+
+              <div id="da-hon-hop">
+                <h2></h2>
+                <h4>Nhận biết da hỗn hợp</h4>
+                <img
+                  style={{ width: "100%" }}
+                  src="https://i.pinimg.com/474x/b8/06/1e/b8061edf8cb46ae91292e753530cabba.jpg"
+                  alt="Da hỗn hợp 1"
+                />
+                <img
+                  style={{ width: "100%" }}
+                  src="https://i.pinimg.com/474x/63/46/dd/6346dd107c5d03bce15b79baf1d250b4.jpg"
+                  alt="Da hỗn hợp 2"
+                />
+              </div>
+
+              <div id="da-nhay-cam">
+                <h2></h2>
+                <h4>Nhận biết da nhạy cảm</h4>
+                <img
+                  style={{ width: "100%" }}
+                  src="https://i.pinimg.com/474x/ff/98/e1/ff98e1ac3c9836400275d1fecf68aa7f.jpg"
+                  alt="Da nhạy cảm"
+                />
+              </div>
+
+              <div id="ket-luan">
+                <p>
+                  Như vậy là mình đã chia sẻ cho bạn các kiến thức về phân biệt
+                  loại da, để mà đi sâu hơn về da thì mình sẽ hẹn bạn ở một bài
+                  khác để phân tích thật là kỹ tất cả loại da và các tình trạng
+                  cho da luôn.
+                </p>
+              </div>
+            </div>
           </section>
         </div>
       </main>
@@ -321,6 +425,7 @@ const Page1 = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          textDecoration: "none",
         }}
       >
         {[1, 2, 3, 4, 5].map((num) => (
@@ -329,6 +434,8 @@ const Page1 = () => {
             style={{
               padding: 10,
               backgroundColor: num === 1 ? "#f2c4c4" : undefined,
+              textDecoration: "none",
+              color: "#502d25",
             }}
             href={`Bài viết ${num} - Skincare.html`}
           >
@@ -385,4 +492,4 @@ const Page1 = () => {
   );
 };
 
-export default Page1;
+export default Skincare1;
