@@ -90,17 +90,11 @@ function Header() {
             <strong>Chuyên mục Skincare</strong>
           </Link>
           <div className="dropdown-content">
-            <Link to="/page1">Nhận biết các loại da</Link>
-            <Link to="/page2">Skincare cho da mụn</Link>
-            <Link to="/bai-viet-3-skincare-cho-da-dau">
-              Skincare cho da dầu
-            </Link>
-            <Link to="/bai-viet-4-skincare-cho-da-kho">
-              Skincare cho da khô
-            </Link>
-            <Link to="/bai-viet-5-skincare-cho-da-thuong">
-              Skincare cho da thường
-            </Link>
+            <Link to="/skincare1">Nhận biết các loại da</Link>
+            <Link to="/skincare2">Skincare cho da mụn</Link>
+            <Link to="/skincare3">Skincare cho da dầu</Link>
+            <Link to="/skincare4">Skincare cho da khô</Link>
+            <Link to="/skincare5">Skincare cho da thường</Link>
           </div>
         </li>
 
@@ -109,12 +103,10 @@ function Header() {
             <strong>Chuyên mục Makeup</strong>
           </Link>
           <div className="dropdown-content">
-            <Link to="/bai-viet-6-cac-buoc-trang-diem-co-ban">
-              Các bước trang điểm cơ bản
-            </Link>
-            <Link to="/bai-viet-7-trang-diem-mat">Trang điểm mặt</Link>
-            <Link to="/bai-viet-8-trang-diem-mat">Trang điểm mắt</Link>
-            <Link to="/bai-viet-9-trang-diem-moi">Trang điểm môi</Link>
+            <Link to="/makeup1">Các bước trang điểm cơ bản</Link>
+            <Link to="/makeup2">Trang điểm mặt</Link>
+            <Link to="/makeup3">Trang điểm mắt</Link>
+            <Link to="/makeup4">Trang điểm môi</Link>
           </div>
         </li>
 

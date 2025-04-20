@@ -1,0 +1,95 @@
+/* Kiểu dáng chung cho bài viết */
+#noi-dung {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin-top: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Định dạng tiêu đề chính */
+  h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Định dạng tiêu đề bước */
+  h4 {
+    font-size: 24px;
+    color: #4CAF50;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Định dạng ảnh */
+  img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Kiểu dáng cho mục lục */
+  #slide-bar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed;
+    top: 150px;
+    left: 20px;
+    margin-top: 20px;
+  }
+  
+  #slide-bar ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  #slide-bar p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  #slide-bar li {
+    margin: 10px 0;
+  }
+  
+  #slide-bar a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  #slide-bar a:hover {
+    color: #d9534f;
+  }
+  
+  /* Định dạng các đoạn văn */
+  p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  /* Định dạng kết luận */
+  #ket-luan {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Phần Mục lục khi di chuột */
+  #slide-bar a:focus {
+    outline: none;
+    border-bottom: 2px solid #4CAF50;
+  }
+  

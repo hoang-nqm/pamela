@@ -1,4 +1,4 @@
-// component/Rating.js
+// components/Rating.js
 import React, { useState, useEffect } from "react";
 import {
   collection,
@@ -8,7 +8,6 @@ import {
   setDoc,
   doc,
   orderBy,
-  limit,
 } from "firebase/firestore";
 import { db } from "../config";
 
@@ -19,8 +18,7 @@ const Rating = ({ username }) => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [reviews, setReviews] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1); // Trang hiện tại
-
+  const [selectedReview, setSelectedReview] = useState(null); // For modal
 
   const checkExistingRating = async () => {
     const q = query(
@@ -37,13 +35,10 @@ const Rating = ({ username }) => {
   };
 
   const fetchReviews = async () => {
-    const q = query(
-      collection(db, "ratings"),
-      orderBy("timestamp", "desc")
-    );
+    const q = query(collection(db, "ratings"), orderBy("timestamp", "desc"));
     const querySnapshot = await getDocs(q);
     const reviewsList = querySnapshot.docs.map((doc) => doc.data());
-    setReviews(reviewsList); // Lưu các đánh giá vào state
+    setReviews(reviewsList);
   };
 
   useEffect(() => {
@@ -57,7 +52,7 @@ const Rating = ({ username }) => {
       return;
     }
 
-    setLoading(true); // Bắt đầu loading
+    setLoading(true);
 
     try {
       await setDoc(doc(db, "ratings", username), {
@@ -67,7 +62,6 @@ const Rating = ({ username }) => {
         timestamp: new Date(),
       });
 
-      // Cập nhật lại dữ liệu từ Firestore để chắc chắn mọi thứ hiển thị đúng
       await checkExistingRating();
       await fetchReviews();
 
@@ -75,10 +69,10 @@ const Rating = ({ username }) => {
     } catch (error) {
       console.error("Lỗi khi gửi đánh giá:", error);
     } finally {
-      setLoading(false); // Dừng loading sau khi xong
+      setLoading(false);
     }
   };
- 
+
   const truncateComment = (comment) => {
     return comment.length > 50 ? comment.slice(0, 50) + "..." : comment;
   };
@@ -97,7 +91,7 @@ const Rating = ({ username }) => {
             onMouseLeave={() => setHovered(0)}
             style={{
               cursor: "pointer",
-              color: star <= (hovered || rating) ? "#ffc107" : "#999", // xám đậm
+              color: star <= (hovered || rating) ? "#ffc107" : "#999",
               transition: "transform 0.2s, color 0.2s",
               transform: star === hovered ? "scale(1.2)" : "scale(1)",
               textShadow:
@@ -148,20 +142,22 @@ const Rating = ({ username }) => {
           ? "Cập nhật đánh giá"
           : "Gửi đánh giá"}
       </button>
-      {/* Confirmation Text */}
+
+      {/* Confirmation */}
       {submitted && (
         <p style={{ marginTop: "15px", color: "#28a745", fontWeight: "bold" }}>
-          {`Đã lưu đánh giá: ${rating} sao - “${comment}”`}
+          {`Đã lưu đánh giá: ${rating} sao - “${truncateComment(comment)}”`}
         </p>
       )}
-        <div
+
+      {/* Reviews List */}
+      <div
         style={{
           margin: "40px 10px",
           display: "flex",
-          flexWrap: "nowrap", // Các đánh giá nằm trên một hàng
-          overflowX: "auto", // Cuộn ngang khi hết không gian
-          gap: "20px", // Khoảng cách giữa các thẻ
-          animation: "scroll 20s linear infinite", // Animation cuộn ngang
+          flexWrap: "nowrap",
+          overflowX: "auto",
+          gap: "20px",
         }}
       >
         {reviews.length === 0 ? (
@@ -171,16 +167,15 @@ const Rating = ({ username }) => {
             <div
               key={index}
               style={{
-                minWidth: "250px", // Đảm bảo mỗi đánh giá có chiều rộng tối thiểu
+                minWidth: "250px",
                 textAlign: "center",
                 backgroundColor: "#f9f9f9",
                 borderRadius: "8px",
                 padding: "15px",
                 boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
+                cursor: "pointer",
               }}
+              onClick={() => setSelectedReview(review)}
             >
               <strong>{review.username}</strong>
               <div
@@ -202,13 +197,86 @@ const Rating = ({ username }) => {
                 ))}
               </div>
               <p style={{ marginTop: "10px" }}>
-                {truncateComment(review.comment)} {/* Cắt ngắn bình luận */}
+                {truncateComment(review.comment)}
               </p>
             </div>
           ))
         )}
       </div>
 
+      {selectedReview && (
+        <div
+          onClick={() => setSelectedReview(null)}
+          style={{
+            position: "fixed",
+            zIndex: 1000,
+            left: 0,
+            top: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.5)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              backgroundColor: "#fff",
+              padding: "30px",
+              borderRadius: "12px",
+              width: "90%",
+              maxWidth: "500px",
+              boxShadow: "0 8px 16px rgba(0,0,0,0.2)",
+            }}
+          >
+            <h3 style={{ marginBottom: "10px" }}>{selectedReview.username}</h3>
+            <div
+              style={{
+                fontSize: "24px",
+                color: "#ffc107",
+                marginBottom: "15px",
+              }}
+            >
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span
+                  key={star}
+                  style={{
+                    color: star <= selectedReview.rating ? "#ffc107" : "#999",
+                  }}
+                >
+                  ★
+                </span>
+              ))}
+            </div>
+            <p
+              style={{
+                whiteSpace: "pre-wrap", // Cho phép xuống dòng đúng theo ngắt dòng trong chuỗi
+                wordWrap: "break-word", // Tự động ngắt dòng khi dài
+                lineHeight: "1.5",
+                fontSize: "16px",
+              }}
+            >
+              {selectedReview.comment}
+            </p>
+            <button
+              onClick={() => setSelectedReview(null)}
+              style={{
+                marginTop: "20px",
+                padding: "10px 20px",
+                backgroundColor: "#f8bbd0",
+                border: "none",
+                borderRadius: "8px",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+            >
+              Đóng
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

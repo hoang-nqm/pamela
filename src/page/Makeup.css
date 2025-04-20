@@ -1,0 +1,64 @@
+/* MakeupGuide.css */
+
+#wrapper {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+  
+  .slide-bar {
+    width: 250px;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+  }
+  
+  #noi-dung {
+    flex: 1;
+    font-family: 'Noto Serif Display', serif;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  #noi-dung img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  #muc-luc {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  #muc-luc p {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  #muc-luc li {
+    margin: 10px 0;
+  }
+  
+  #muc-luc a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  #muc-luc a:hover {
+    color: #cc3366;
+  }
+  
+  h2 {
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  h4 {
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  

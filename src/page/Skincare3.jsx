@@ -13,23 +13,7 @@ const Skincare3 = () => {
 
         <div id="wrapper" style={{ display: "flex" }}>
           <div id="slide-bar">
-            <ul
-              id="muc-luc"
-              style={{
-                listStyleType: "none",
-                border: "1px solid #502d25",
-                backgroundColor: "#ffffff",
-                opacity: 0.9,
-                padding: "20px",
-                position: "sticky",
-                top: 100,
-                fontFamily: "Noto Serif, serif",
-                fontSize: "18px",
-                color: "#502d25",
-                borderRadius: "8px",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-              }}
-            >
+            <ul id="muc-luc">
               <p
                 style={{
                   fontFamily: "NotoSerifDisplay-Condensed",
@@ -40,36 +24,16 @@ const Skincare3 = () => {
                 <strong>Mục lục</strong>
               </p>
               <li>
-                <a
-                  style={{ textDecoration: "none", color: "#502d25" }}
-                  href="#buoc-1"
-                >
-                  Bước 1: Tẩy trang
-                </a>
+                <a href="#buoc-1">Bước 1: Tẩy trang</a>
               </li>
               <li>
-                <a
-                  style={{ textDecoration: "none", color: "#502d25" }}
-                  href="#buoc-2"
-                >
-                  Bước 2: Rửa mặt
-                </a>
+                <a href="#buoc-2">Bước 2: Rửa mặt</a>
               </li>
               <li>
-                <a
-                  style={{ textDecoration: "none", color: "#502d25" }}
-                  href="#buoc-3"
-                >
-                  Bước 3: Dùng Toner
-                </a>
+                <a href="#buoc-3">Bước 3: Dùng Toner</a>
               </li>
               <li>
-                <a
-                  style={{ textDecoration: "none", color: "#502d25" }}
-                  href="#buoc-4"
-                >
-                  Bước 4: Dưỡng ẩm
-                </a>
+                <a href="#buoc-4">Bước 4: Dưỡng ẩm</a>
               </li>
               <br />
             </ul>
